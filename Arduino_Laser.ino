@@ -6,7 +6,7 @@
 #include <Servo.h>
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(9600, SERIAL_8E1);
 }
 
 void loop()
@@ -15,7 +15,7 @@ void loop()
   if (Serial.available())
   {
     Serial.print((char)(Serial.read()));
-    if (count++ > 60)
+    if (count++ > 12)
     {
       Serial.println("");
       count = 0;
